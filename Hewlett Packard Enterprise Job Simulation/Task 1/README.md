@@ -34,12 +34,20 @@ After reviewing the documentation, consider the design of a web service that sup
 Write up the proposal addressing the topics mentioned in the background information. The proposal should be around 250-400 words, detailing the design of the web service.
 
 ### Proposal
-The proposal should describe the design of a RESTful web service using Java Spring Boot and HPE GreenLake Cloud Platform. The service will support CRUD operations (Create, Read, Update, Delete) on a list of employees, with each employee having `first_name`, `last_name`, `employee_id`, `email`, and `title` fields. The service will utilize a private cloud server for data storage and implement RESTful principles to ensure efficient and scalable interaction with the client applications.
+
+In designing a RESTful web service using Java Spring Boot and HPE GreenLake Cloud Platform, the aim is to create a robust system for managing a list of employees. This service will support the essential CRUD operations: Create, Read, Update, and Delete. Each employee entry will include the following fields: `first_name`, `last_name`, `employee_id`, `email`, and `title`. The data will be securely stored on a private cloud server provided by the HPE GreenLake Cloud Platform.
 
 #### Key Components of the Design:
-- **GET Request**: To fetch the full list of employees.
-- **POST Request**: To add a new employee entry.
-- **DELETE Request**: To remove an employee entry based on `employee_id`.
-- **UPDATE Request**: To modify the details of an existing employee entry.
+1. **GET Request**: This endpoint will return the full list of employees. By making a GET request, the client will receive a JSON array of all employee objects stored in the system. This allows for easy retrieval and display of employee data.
+   
+2. **POST Request**: This endpoint will allow for the addition of new employee entries. When a POST request is made with the necessary employee data, the service will create a new employee record and store it in the cloud database. This ensures that new employees can be added to the system dynamically.
 
-The service will leverage Java Spring Boot for rapid development and deployment, ensuring that the application is easy to manage and scale. HPE GreenLake Cloud Platform will provide the robust and secure data storage needed to maintain employee information.
+3. **DELETE Request**: This endpoint will facilitate the removal of employee entries based on the `employee_id`. By sending a DELETE request with the specific `employee_id`, the corresponding employee record will be deleted from the database. This functionality is crucial for maintaining an up-to-date employee list.
+
+4. **UPDATE Request**: This endpoint will enable modifications to existing employee entries. By making an UPDATE request with the `employee_id` and the updated data fields, the service will update the relevant employee record in the database. This ensures that any changes to employee details can be easily managed.
+
+#### Implementation Details:
+- **Java Spring Boot**: This framework will be utilized for its simplicity and efficiency in building standalone applications. Spring Boot's RESTful capabilities will be leveraged to handle HTTP requests and responses, ensuring that the web service adheres to REST principles.
+- **HPE GreenLake Cloud Platform**: This platform will provide the necessary cloud infrastructure for data storage. By using GreenLake, the service will benefit from secure, scalable, and reliable data storage solutions.
+
+By integrating Java Spring Boot and HPE GreenLake Cloud Platform, the proposed web service will offer a seamless and efficient way to manage employee data. The service will be designed to handle various HTTP requests, ensuring that employee information can be easily added, retrieved, updated, and deleted as needed. This proposal outlines a clear path for developing a scalable and maintainable RESTful web service that meets the specified requirements.
